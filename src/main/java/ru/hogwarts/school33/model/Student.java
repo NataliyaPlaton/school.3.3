@@ -1,13 +1,13 @@
 package ru.hogwarts.school33.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
+
 @Entity
+@Table(name = "students")
 public class Student {
-@Id
-@GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private int age;
@@ -19,9 +19,7 @@ public class Student {
     }
 
     public Student() {
-
     }
-
 
     @Override
     public String toString() {
